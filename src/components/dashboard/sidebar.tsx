@@ -20,8 +20,8 @@ import {
   Settings,
 } from "lucide-react";
 import CompanySwitcher from "@/components/dashboard/company-switcher";
+import NavUser from "@/components/dashboard/user-menu";
 import NavMain from "@/components/dashboard/nav-main";
-import NavUser from "@/components/dashboard/nav-user";
 import * as React from "react";
 
 const data = {
@@ -99,8 +99,8 @@ const data = {
 
 export function DashboardSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
+    <Sidebar collapsible="icon" className="border-dashed" {...props}>
+      <SidebarHeader className="flex h-16 shrink-0 gap-0 border-b border-dashed transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
@@ -113,15 +113,15 @@ export function DashboardSidebar({ ...props }: React.ComponentProps<typeof Sideb
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
-        <CompanySwitcher companies={data.companies} />
+        {/* <CompanySwitcher companies={data.companies} /> */}
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
       </SidebarContent>
-      <SidebarFooter>
-        <NavUser user={data.user} />
+      <SidebarFooter className="border-t border-dashed">
+        <CompanySwitcher companies={data.companies} />
       </SidebarFooter>
-      <SidebarRail />
+      {/* <SidebarRail /> */}
     </Sidebar>
   );
 }
