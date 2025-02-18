@@ -1,4 +1,4 @@
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { DashboardSidebar } from "@/components/dashboard/sidebar";
 import Header from "@/components/dashboard/header";
 import { ThemeProvider } from "next-themes";
@@ -10,7 +10,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <DashboardSidebar />
         <SidebarInset>
           <Header />
-          <main className="p-4">{children}</main>
+          <div className="flex flex-1 flex-col p-8">{children}</div>
         </SidebarInset>
       </SidebarProvider>
     </ThemeProvider>

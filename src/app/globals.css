@@ -38,6 +38,26 @@
   --color-chart-4: hsl(var(--chart-4));
   --color-chart-5: hsl(var(--chart-5));
 
+  --color-chart-slate: hsl(var(--chart-slate));
+  --color-chart-gray: hsl(var(--chart-gray));
+  --color-chart-neutral: hsl(var(--chart-neutral));
+  --color-chart-red: hsl(var(--chart-red));
+  --color-chart-orange: hsl(var(--chart-orange));
+  --color-chart-yellow: hsl(var(--chart-yellow));
+  --color-chart-green: hsl(var(--chart-green));
+  --color-chart-lime: hsl(var(--chart-lime));
+  --color-chart-emerald: hsl(var(--chart-emerald));
+  --color-chart-teal: hsl(var(--chart-teal));
+  --color-chart-cyan: hsl(var(--chart-cyan));
+  --color-chart-sky: hsl(var(--chart-sky));
+  --color-chart-blue: hsl(var(--chart-blue));
+  --color-chart-indigo: hsl(var(--chart-indigo));
+  --color-chart-violet: hsl(var(--chart-violet));
+  --color-chart-purple: hsl(var(--chart-purple));
+  --color-chart-fuchsia: hsl(var(--chart-fuchsia));
+  --color-chart-pink: hsl(var(--chart-pink));
+  --color-chart-rose: hsl(var(--chart-rose));
+
   --color-sidebar: hsl(var(--sidebar-background));
   --color-sidebar-foreground: hsl(var(--sidebar-foreground));
   --color-sidebar-primary: hsl(var(--sidebar-primary));
@@ -50,6 +70,8 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+
+  --color-bg: var(--color-bg);
 }
 
 /*
@@ -80,33 +102,59 @@
   :root {
     --background: 220 15% 97%;
     --foreground: 220 15% 25%;
-    
+
     --card: 0 0% 100%;
     --card-foreground: 220 15% 25%;
-    
+
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 25%;
-    
+
     --primary: 171 47% 43%;
     --primary-foreground: 0 0% 100%;
-    
+
     --secondary: 220 15% 94%;
     --secondary-foreground: 220 15% 25%;
-    
+
     --muted: 220 15% 94%;
     --muted-foreground: 220 15% 45%;
-    
+
     --accent: 220 15% 92%;
     --accent-foreground: 171 47% 43%;
-    
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 20% 98%;
-    
+
     --border: 220 15% 92%;
     --input: 220 15% 92%;
     --ring: 171 47% 43%;
-    
+
     --radius: 0.75rem;
+
+    --chart-1: 217 100% 61%;
+    --chart-2: 265 83% 57%;
+    --chart-3: 334 100% 50%;
+    --chart-4: 19 97% 51%;
+    --chart-5: 44 100% 52%;
+
+    --chart-slate: 215 20.2% 65.1%;
+    --chart-gray: 220 8.9% 46.1%;
+    --chart-neutral: 0 0% 63.9%;
+    --chart-red: 0 84.2% 60.2%;
+    --chart-orange: 24.6 95% 53.1%;
+    --chart-yellow: 47.9 95.8% 53.1%;
+    --chart-green: 142.1 70.6% 45.3%;
+    --chart-lime: 82.7 78% 55.5%;
+    --chart-emerald: 158.1 64.4% 51.6%;
+    --chart-teal: 172.5 66% 50.4%;
+    --chart-cyan: 187.9 85.7% 53.3%;
+    --chart-sky: 198.4 93.2% 59.6%;
+    --chart-blue: 217.2 91.2% 59.8%;
+    --chart-indigo: 238.7 83.5% 66.7%;
+    --chart-violet: 258.3 89.5% 66.3%;
+    --chart-purple: 270 95.2% 75.3%;
+    --chart-fuchsia: 292.2 84.1% 60.6%;
+    --chart-pink: 330.4 81.2% 60.4%;
+    --chart-rose: 349.7 89.2% 60.2%;
 
     --sidebar-background: 220 15% 98%;
     --sidebar-foreground: 220 15% 25%;
@@ -143,9 +191,35 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 20% 98%;
 
-    --border: 0 0% 13%;
+    --border: 0 0% 17.5%;
     --input: 0 0% 13%;
     --ring: 171 47% 43%;
+
+    --chart-1: 217 100% 61%;
+    --chart-2: 265 83% 57%;
+    --chart-3: 334 100% 50%;
+    --chart-4: 19 97% 51%;
+    --chart-5: 44 100% 52%;
+
+    --chart-slate: 215 20.2% 65.1%;
+    --chart-gray: 220 8.9% 46.1%;
+    --chart-neutral: 0 0% 63.9%;
+    --chart-red: 0 84.2% 60.2%;
+    --chart-orange: 24.6 95% 53.1%;
+    --chart-yellow: 47.9 95.8% 53.1%;
+    --chart-green: 142.1 70.6% 45.3%;
+    --chart-lime: 82.7 78% 55.5%;
+    --chart-emerald: 158.1 64.4% 51.6%;
+    --chart-teal: 172.5 66% 50.4%;
+    --chart-cyan: 187.9 85.7% 53.3%;
+    --chart-sky: 198.4 93.2% 59.6%;
+    --chart-blue: 217.2 91.2% 59.8%;
+    --chart-indigo: 238.7 83.5% 66.7%;
+    --chart-violet: 258.3 89.5% 66.3%;
+    --chart-purple: 270.7 91% 65.1%;
+    --chart-fuchsia: 292.2 84.1% 60.6%;
+    --chart-pink: 330.4 81.2% 60.4%;
+    --chart-rose: 349.7 89.2% 60.2%;
 
     --sidebar-background: 0 0% 9%;
     --sidebar-foreground: 0 0% 90%;

@@ -1,12 +1,11 @@
 "use client";
 
-import { Overview, revenueData } from "@/components/dashboard/overview";
-import { GrowthChart } from "@/components/dashboard/growth-chart";
-import { RecentInvoices } from "@/components/dashboard/recent-invoices";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useState } from "react";
-import { DateRangePicker } from "@/components/ui/date-range-picker";
+import { RecentInvoices } from "@/components/dashboard/recent-invoices";
+import { Overview } from "@/components/dashboard/overview";
+import { GrowthChart } from "@/components/dashboard/growth-chart";
 import { DateRange } from "react-day-picker";
+import { useState } from "react";
 
 // Helper function to determine the color class based on the percentage
 function getPercentageColorClass(percentage: number): string {
@@ -20,9 +19,9 @@ function formatPercentage(percentage: number): string {
 }
 
 export default function Dashboard() {
-  const [dateRange, setDateRange] = useState<DateRange | undefined>({ 
+  const [dateRange, setDateRange] = useState<DateRange | undefined>({
     from: new Date(2023, 6, 1), // July 2023
-    to: new Date(2024, 6, 1)    // July 2024
+    to: new Date(2024, 6, 1), // July 2024
   });
 
   // Mock data for the cards
@@ -34,7 +33,7 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="flex flex-1 flex-col gap-4 p-4">
+    <div className="flex flex-1 flex-col gap-4">
       {/* Updated main content container */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {cardData.map((card, index) => (
@@ -65,10 +64,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
       </div>
-      <GrowthChart 
-        dateRange={dateRange} 
-        setDateRange={setDateRange}
-      />
+      <GrowthChart dateRange={dateRange} setDateRange={setDateRange} />
     </div>
   );
 }
