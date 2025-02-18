@@ -1,15 +1,15 @@
 "use client";
 
-import { ClientModal } from "@/components/client-modal";
-import { ClientsTable } from "@/components/dashboard/clients-table";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
   PaginationLink,
 } from "@/components/ui/pagination";
+import { ClientsTable } from "@/components/dashboard/clients-table";
+import { ClientModal } from "@/components/client-modal";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 
@@ -79,7 +79,7 @@ export default function Clients() {
 
   return (
     <>
-      <div className="flex flex-grow flex-col space-y-6 overflow-hidden p-6">
+      <div className="flex flex-grow flex-col space-y-6 overflow-hidden">
         <div className="flex items-center justify-between">
           <h1 className="text-3xl font-bold tracking-tight">Clients</h1>
           <Button onClick={() => setIsModalOpen(true)}>

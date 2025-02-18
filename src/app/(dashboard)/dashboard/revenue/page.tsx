@@ -1,10 +1,5 @@
 "use client";
 
-import { RevenueBySourceChart } from "@/components/charts/revenue-by-source-chart";
-import { RevenueChart } from "@/components/charts/revenue-chart";
-import { TopProductsChart } from "@/components/charts/top-products-chart";
-import { DateRangePicker } from "@/components/ui/date-range-picker";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
   SelectContent,
@@ -12,17 +7,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useState } from "react";
+import { RevenueBySourceChart } from "@/components/charts/revenue-by-source-chart";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { TopProductsChart } from "@/components/charts/top-products-chart";
+import { DateRangePicker } from "@/components/ui/date-range-picker";
+import { RevenueChart } from "@/components/charts/revenue-chart";
 import { DateRange } from "react-day-picker";
+import { useState } from "react";
 
 export default function RevenuePage() {
-  const [dateRange, setDateRange] = useState<DateRange | undefined>({ 
-    from: new Date(2023, 0, 1), 
-    to: new Date() 
+  const [dateRange, setDateRange] = useState<DateRange | undefined>({
+    from: new Date(2023, 0, 1),
+    to: new Date(),
   });
 
   return (
-    <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+    <div className="flex flex-1 flex-col gap-4">
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold tracking-tight">Revenue Overview</h1>
         <div className="flex items-center gap-4">
@@ -40,7 +40,7 @@ export default function RevenuePage() {
           <DateRangePicker date={dateRange} setDate={setDateRange} />
         </div>
       </div>
-      
+
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -79,7 +79,7 @@ export default function RevenuePage() {
           </CardContent>
         </Card>
       </div>
-      
+
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
         <div className="col-span-4">
           <RevenueChart />
@@ -88,7 +88,7 @@ export default function RevenuePage() {
           <RevenueBySourceChart />
         </div>
       </div>
-      
+
       <TopProductsChart />
     </div>
   );
